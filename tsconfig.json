@@ -19,6 +19,6 @@
         "module": "commonjs",
         "emitDecoratorMetadata": true
     },
-    "include": ["src/**/*", "app.ts", ".env"],
+    "include": ["src/**/*", "app.ts"],
     "exclude": ["node_modules", "src/**/*.spec.ts"]
 }

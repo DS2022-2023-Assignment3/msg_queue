@@ -84,6 +84,7 @@ const handleOnMessage = (msg) => __awaiter(void 0, void 0, void 0, function* () 
     }
     if (currentConsumptionValue > maxHourlyConsumption) {
         console.log('[!] Sending alert to client ' + currentDevice.id);
+        console.log(clients.keys);
         if (clients.has(currentDevice.id)) {
             clients.get(currentDevice.id).send(JSON.stringify({
                 deviceId: currentDevice.id,
