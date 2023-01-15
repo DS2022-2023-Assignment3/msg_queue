@@ -23,5 +23,6 @@ COPY . .
 RUN yarn build
 
 # Start the server using the production build
+EXPOSE 8080
 
 CMD [ "npm", "run", "start:prod" ]
