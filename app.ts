@@ -9,7 +9,7 @@ import { Between } from 'typeorm';
 import ws from 'ws';
 import { IncomingMessage } from 'http';
 
-const wss = new ws.Server({ port: 4444 });
+const wss = new ws.Server({ port: +process.env.WS_PORT });
 
 let dbInitialized = false;
 const clients = new Map<string, ws.WebSocket>();

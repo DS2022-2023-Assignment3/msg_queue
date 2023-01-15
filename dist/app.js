@@ -21,7 +21,7 @@ const consumption_entity_1 = require("./src/entities/consumption.entity");
 const device_entity_1 = require("./src/entities/device.entity");
 const typeorm_1 = require("typeorm");
 const ws_1 = __importDefault(require("ws"));
-const wss = new ws_1.default.Server({ port: 4444 });
+const wss = new ws_1.default.Server({ port: +process.env.WS_PORT });
 let dbInitialized = false;
 const clients = new Map();
 wss.on('connection', function connection(wsConnection, req) {
@@ -84,7 +84,6 @@ const handleOnMessage = (msg) => __awaiter(void 0, void 0, void 0, function* () 
     }
     if (currentConsumptionValue > maxHourlyConsumption) {
         console.log('[!] Sending alert to client ' + currentDevice.id);
-        console.log(clients.keys);
         if (clients.has(currentDevice.id)) {
             clients.get(currentDevice.id).send(JSON.stringify({
                 deviceId: currentDevice.id,
