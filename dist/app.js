@@ -21,7 +21,7 @@ const consumption_entity_1 = require("./src/entities/consumption.entity");
 const device_entity_1 = require("./src/entities/device.entity");
 const typeorm_1 = require("typeorm");
 const ws_1 = __importDefault(require("ws"));
-const wss = new ws_1.default.Server({ port: 8111 });
+const wss = new ws_1.default.Server({ port: 4444 });
 let dbInitialized = false;
 const clients = new Map();
 wss.on('connection', function connection(wsConnection, req) {

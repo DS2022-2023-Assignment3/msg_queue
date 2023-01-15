@@ -24,6 +24,5 @@ RUN yarn build
 
 # Start the server using the production build
 
-EXPOSE 8111
 
 CMD [ "npm", "run", "start:prod" ]
